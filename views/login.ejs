@@ -1,0 +1,26 @@
+<%- include ('partials/header.ejs'); -%>
+
+<h2>Login Page</h2>
+
+<%if(success_msg) {%>
+<div>
+    <%= success_msg %>
+</div>
+<%}%>
+
+<%if(error_msg) {%>
+<div>
+    <%= error_msg %>
+</div>
+<%}%>
+<form action="/login" method="post">
+    <div class="form-group">
+        <label>Username</label><br>
+        <input type="text" name="username" class="form-control"><br>
+        <label>Password</label><br>
+        <input type="password" name="password" class="form-control"><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<%- include ('partials/footer.ejs'); -%>

@@ -1,0 +1,61 @@
+<%- include ('partials/header.ejs'); -%>
+
+    <div>
+      <h3>Your Todo List</h3>
+      <table class="table table-dark">
+      <!-- <table class="table table-striped table-dark"></table> -->
+        <thead>
+            <tr>
+                <th scope="col">S.N</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Update/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% todoData.forEach((data)=> { %>
+            <tr>
+                <td><%=data.id %></td>
+                <td><%=data.name %></td>
+                <td><%=data.description %></td>
+                <td>
+                  <p>Edit Delete</p>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+        </table>
+    </div>
+
+    <form action="/add" method="post">
+      <div class="form-group">
+        <label>Add new todo</label><br>
+        <label>Name</label><br>
+        <input type="text" name="name" placeholder="todo name" class="form-control"><br>
+        <label>Description</label><br>
+        <input type="text" name="description" placeholder="todo description" class="form-control"><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    <form action="/update" method="post">
+      <div class="form-group">
+        <label>Enter the id of the todo you want to update</label><br>
+        <input type="text" name="todoid" class="form-control"><br>
+        <label>Update name to</label><br>
+        <input type="text" name="name" class="form-control"><br>
+        <label>Update description to</label><br>
+        <input type="text" name="description" class="form-control"><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    <form action="/delete" method="post">
+        <div class="form-group">
+        <label>Enter the id of the todo you want to delete</label><br>
+        <input type="text" name="todoid" class="form-control"><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+</form>
+
+<%- include ('partials/footer.ejs'); -%>

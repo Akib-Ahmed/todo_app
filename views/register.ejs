@@ -1,0 +1,32 @@
+<%- include ('partials/header.ejs'); -%>
+
+<h2>Registration Page</h2>
+<%if(error_msg)%>
+<div>
+    <%= error_msg %>
+</div>
+<%if(username_exists)%>
+<div>
+    <%= username_exists %>
+</div>
+<%if(email_exists)%>
+<div>
+    <%= email_exists %>
+</div>
+<form action="/register" method="post">
+    <div class="form-group">
+        <label>Name</label><br>
+        <input type="text" name="name" class="form-control"><br>
+        <label>Username</label><br>
+        <input type="text" name="username" class="form-control"><br>
+        <label>email</label><br>
+        <input type="text" name="email" class="form-control"><br>
+        <label>Password</label><br>
+        <input type="password" name="password" class="form-control"><br>
+        <label>Confirm password</label><br>
+        <input type="password" name="password_confirm" class="form-control"><br>
+        <input type="submit"  class="btn btn-primary">
+    </div>
+</form>
+
+<%- include ('partials/footer.ejs'); -%>
