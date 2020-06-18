@@ -1,2 +1,5 @@
 # todo_app
-Todo app using express with user session and login
+Todo app using express
+
+- Has user login system using Passport
+- Mysql DB
