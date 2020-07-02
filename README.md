@@ -3,7 +3,3 @@ Todo app using express
 
 - Has user login system using Passport
 - Mysql DB
-
-lalalalalalla
-talalalalalalala
-lalalalalalalalala
